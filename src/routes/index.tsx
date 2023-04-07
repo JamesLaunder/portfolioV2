@@ -1,108 +1,42 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-
-import Counter from '~/components/starter/counter/counter';
-import Hero from '~/components/starter/hero/hero';
-import Infobox from '~/components/starter/infobox/infobox';
-import Starter from '~/components/starter/next-steps/next-steps';
+import headshot from "/James.jpg";
 
 export default component$(() => {
   return (
-    <>
-      <Hero />
-
-      <div class="section bright">
-        <div class="container center">
-          <Starter />
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="container center">
-          <h3>
-            You can <b>count</b> on me
-          </h3>
-          <Counter />
-        </div>
-      </div>
-
-      <div class="section">
-        <div class="container topics">
-          <Infobox>
-            <div q:slot="title" class="icon icon-cli">
-              CLI Commands
+    <div class="h-screen w-full bg-[#121212] flex justify-center">
+    <div class="holder">
+      <div class="bar">
+        <div class="text">
+          <div class="holdtext">
+            <div class="flex h-fit gap-4">
+              <div class=" rounded-xl">
+                <img src={headshot} alt="" class="object-scale rounded-xl h-[30rem]"/>
+                </div>
+              
+              <div class="grid grid-flow-row gap-2 justify-evenly">
+                <div class="">
+                  <h1 class="text-6xl font-bold font-sans pb-4">James Launder</h1>
+                  <h2 class="text-3xl font-bold font-sans text-white/90">Masters of Software Engineering</h2>
+                  <div class="text-2xl font-bold font-sans text-white/90">Melbourne</div>
+                </div>
+                  <div class="flex flex-col gap-6 pb-2 text-center">
+                    <button class="text-6xl font-bold font-sans text-[#EBFF54]">Resume</button>
+                    <button class="text-6xl font-bold font-sans text-[#17dff9]">Projects</button>
+                  </div>
+                  <div class="flex justify-around ">
+                    <a class="text-4xl font-bold font-sans text-white/70" href="https://github.com/JamesLaunder" target="_blank">Github</a>
+                    <a class="text-4xl font-bold font-sans text-white/70" href="https://www.linkedin.com/in/james-launder-24667226a/" target="_blank">LinkedIn</a>
+                  </div>
+              </div>
+           
             </div>
-            <>
-              <p>
-                <code>npm run dev</code>
-                <br />
-                Starts the development server and watches for changes
-              </p>
-              <p>
-                <code>npm run preview</code>
-                <br />
-                Creates production build and starts a server to preview it
-              </p>
-              <p>
-                <code>npm run build</code>
-                <br />
-                Creates production build
-              </p>
-              <p>
-                <code>npm run qwik add</code>
-                <br />
-                Runs the qwik CLI to add integrations
-              </p>
-            </>
-          </Infobox>
-
-          <div>
-            <Infobox>
-              <div q:slot="title" class="icon icon-apps">
-                Example Apps
-              </div>
-              <p>
-                Have a look at the <a href="/demo/flower">Flower App</a> or the{' '}
-                <a href="/demo/todolist">Todo App</a>.
-              </p>
-            </Infobox>
-
-            <Infobox>
-              <div q:slot="title" class="icon icon-community">
-                Community
-              </div>
-              <ul>
-                <li>
-                  <span>Questions or just want to say hi? </span>
-                  <a href="https://qwik.builder.io/chat" target="_blank">
-                    Chat on discord!
-                  </a>
-                </li>
-                <li>
-                  <span>Follow </span>
-                  <a href="https://twitter.com/QwikDev" target="_blank">
-                    @QwikDev
-                  </a>
-                  <span> on Twitter</span>
-                </li>
-                <li>
-                  <span>Open issues and contribute on </span>
-                  <a href="https://github.com/BuilderIO/qwik" target="_blank">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <span>Watch </span>
-                  <a href="https://qwik.builder.io/media/" target="_blank">
-                    Presentations, Podcasts, Videos, etc.
-                  </a>
-                </li>
-              </ul>
-            </Infobox>
+            </div>
+  
           </div>
         </div>
       </div>
-    </>
+   </div>
   );
 });
 
