@@ -19,7 +19,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en">
+      <body lang="en" class="h-screen bg-[#121212]">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>
