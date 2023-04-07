@@ -4,10 +4,18 @@ import headshot from "/James.jpg";
 
 export default component$(() => {
   const effect = useStore({
-    value: false,
-    text: "test",
+    value: false
   });
-  // const effect = useSignal(true)
+  // window.addEventListener('click', function(e){   
+  //   if (document.getElementById('clickbox').contains(e.target)){
+  //     // Clicked in box
+  //   } else{
+  //     // Clicked outside the box
+  //   }
+  // });
+  // const effectSig = useSignal(true)
+
+  // https://qwik.builder.io/docs/components/events/
   return (
     <div class="h-screen bg-[#121212] flex justify-center z-0">
     <div class="holder">
@@ -29,15 +37,11 @@ export default component$(() => {
                     <button class="text-6xl font-bold font-sans text-[#EBFF54]" >Resume</button>
                     <button class="text-6xl font-bold font-sans text-[#17dff9]"  onClick$={() => {
         effect.value = !effect.value;
-        effect.text = 'new'
-        console.log(effect.value)
       }}>Projects</button>
                   </div>
                   <div class="flex justify-around max-w-sm sm:max-w-full">
                     <a class="text-4xl font-bold font-sans text-white/70" href="https://github.com/JamesLaunder" target="_blank">Github</a>
                     <a class="text-4xl font-bold font-sans text-white/70" href="https://www.linkedin.com/in/james-launder-24667226a/" target="_blank">LinkedIn</a>
-                    <a class="text-4xl font-bold font-sans text-white/70" href="https://www.linkedin.com/in/james-launder-24667226a/" target="_blank">{effect.text}</a>
-                  
                   </div>
               </div>
            
@@ -47,15 +51,13 @@ export default component$(() => {
           </div>
         </div>
       </div>
-      {/* <div 
-      class={`${effect ? "bg-blue-500" : "bg-green-500"} h-[75vh] w-[75vw] absolute inset-y-3/4 z-10`} 
-      // onAnimationEnd$={()=> console.log('complete')}
-      // class={`${
-      //   effect && "animate-wiggle"
-      // } bg-blue-500 p-4 text-white rounded hover:bg-blue-700 hover:shadow-xl`}
-     
-      // onAnimationEnd$={() => effect.value=false}
-      >Testing</div> */}
+      <div 
+     id="clickbox"
+      class={`${effect.value ? "inset-y-20 opacity-100 h-[75vh]" : "inset-y-3/4 opacity-0 h-0"} w-[75vw] absolute bg-red-500 z-10 transform duration-700 `} 
+      onClick$={() => {
+        effect.value = !effect.value;
+      }}
+      >Testing</div>
    </div>
   );
 });
